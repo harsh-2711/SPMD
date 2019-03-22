@@ -1,0 +1,38 @@
+#pragma once
+
+extern uniform const unsigned int32 Velo_Constants_n_modules;
+extern uniform const unsigned int32 VP_ChipColumns;
+
+extern uniform const unsigned int32 VeloClustering_mask_bottom;
+extern uniform const unsigned int32 VeloClustering_mask_top;
+extern uniform const unsigned int32 VeloClustering_mask_top_left;
+extern uniform const unsigned int32 VeloClustering_mask_bottom_right;
+extern uniform const unsigned int32 VeloClustering_mask_ltr_top_right;
+extern uniform const unsigned int32 VeloClustering_mask_rtl_bottom_left;
+extern uniform const unsigned int32 VeloClustering_max_clustering_iterations;
+extern uniform const unsigned int32 VeloClustering_lookup_table_size;
+extern uniform const unsigned int32 VeloClustering_max_candidates_event;
+
+extern uniform const unsigned int32 Velo_Tracking_max_concurrent_h1;
+// uniform const float Velo_Tracking_phi_extrapolation;
+extern uniform const float Velo_Tracking_phi_extrapolation;
+// uniform const float Velo_Tracking_phi_extrapolation;
+extern uniform const float Velo_Tracking_forward_phi_tolerance;
+extern uniform const float Velo_Tracking_max_slope;
+extern uniform const float Velo_Tracking_tolerance;
+extern uniform const float Velo_Tracking_max_scatter_seeding;
+extern uniform const float Velo_Tracking_max_scatter_forwarding;
+extern uniform const unsigned int32 Velo_Tracking_max_skipped_modules;
+extern uniform const unsigned int32 Velo_Tracking_ttf_modulo;
+extern uniform const unsigned int32 Velo_Tracking_max_weak_tracks;
+extern uniform const unsigned int32 Velo_Tracking_states_per_track;
+extern uniform const float Velo_Tracking_param_w;
+extern uniform const float Velo_Tracking_param_w_inverted;
+extern uniform const float Velo_Tracking_max_chi2;
+
+#define Velo_Constants_max_track_size 26
+extern uniform const unsigned int32 Velo_Constants_max_tracks;
+extern uniform const unsigned int32 Velo_Constants_max_numhits_in_module;
+extern uniform const unsigned int32 Velo_num_atomics;
+
+extern uniform const float FLT_MAX;

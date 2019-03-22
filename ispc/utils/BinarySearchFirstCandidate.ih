@@ -1,0 +1,15 @@
+#pragma once
+
+int binary_search_first_candidate(
+  const float* array,
+  const unsigned int32 array_size,
+  const float& value,
+  const float margin
+);
+
+int binary_search_second_candidate(
+  const float* array,
+  const unsigned int32 array_size,
+  const float& value,
+  const float margin
+);

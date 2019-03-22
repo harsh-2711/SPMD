@@ -1,0 +1,48 @@
+#pragma once
+
+#include "VeloConstants.ih"
+#include "VeloData.ih"
+
+uniform VeloRawEvent VeloRawEvent_ctor(const uniform int8* uniform event);
+
+uniform VeloRawBank VeloRawBank_ctor(const uniform int8* uniform raw_bank);
+
+VeloRawBank VeloRawBank_ctor(const int8* raw_bank);
+
+uniform VeloGeometry VeloGeometry_ctor(uniform const int8* uniform geometry);
+
+unsigned int32 get_channel_id(unsigned int sensor, unsigned int chip, unsigned int col, unsigned int row);
+
+int32 get_lhcb_id(int32 cid);
+
+Velo_Module Velo_Module_ctor(
+  const unsigned int32 _hitStart,
+  const unsigned int32 _hitNums,
+  const float _z);
+
+Velo_HitBase Velo_HitBase_ctor(
+  const float x,
+  const float y,
+  const float z);
+
+Velo_Hit Velo_Hit_ctor(
+  const float x,
+  const float y,
+  const float z,
+  const unsigned int32 LHCbID);
+
+Velo_TrackletHits Velo_TrackletHits_ctor(
+  const unsigned int16 h0,
+  const unsigned int16 h1,
+  const unsigned int16 h2);
+
+Velo_TrackHits Velo_TrackHits_ctor(
+  const unsigned int16 h0,
+  const unsigned int16 h1,
+  const unsigned int16 h2);
+
+Velo_TrackHits Velo_TrackHits_ctor(
+  const Velo_TrackletHits* tracklet_hits,
+  const unsigned int32 tracklet_number);
+
+Velo_Track Velo_Track_ctor();

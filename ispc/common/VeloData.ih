@@ -1,0 +1,72 @@
+#pragma once
+
+#include "VeloConstants.ih"
+
+struct VeloRawEvent {
+  unsigned int32 number_of_raw_banks;
+  unsigned int32* raw_bank_offset;
+  int8* payload;
+};
+
+struct VeloRawBank {
+  unsigned int32 sensor_index;
+  unsigned int32 sp_count;
+  unsigned int32* sp_word;
+};
+
+/**
+ * @brief Velo geometry description typecast.
+ */
+struct VeloGeometry {
+  unsigned int32 size;
+  unsigned int32 number_of_sensors;
+  unsigned int32 number_of_sensor_columns;
+  unsigned int32 number_of_sensors_per_module;
+  unsigned int32 chip_columns;
+  float pixel_size;
+  double* local_x;
+  double* x_pitch;
+  float* ltg;
+};
+
+struct Velo_Module {
+  unsigned int32 hitStart;
+  unsigned int32 hitNums;
+  float z;
+};
+
+struct Velo_HitBase {
+  float x;
+  float y;
+  float z;
+};
+
+struct Velo_Hit {
+  float x;
+  float y;
+  float z;
+  unsigned int32 LHCbID;
+};
+
+struct Velo_TrackletHits { // 3 * 2 = 6 B
+  unsigned int16 hits[3];
+};
+
+struct Velo_TrackHits {
+  unsigned int16 hitsNum;
+  unsigned int16 hits[Velo_Constants_max_track_size];
+};
+
+struct Velo_Track {
+  bool backward;
+  unsigned int16 hitsNum;
+  unsigned int16 hits[Velo_Constants_max_track_size];
+};
+
+struct VeloState { // 48 B
+  float x, y, tx, ty;
+  float c00, c20, c22, c11, c31, c33;
+  float chi2;
+  float z;
+  bool backward;
+};

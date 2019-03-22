@@ -1,0 +1,33 @@
+#pragma once
+
+extern uniform const float ONEQTR_PI;
+extern uniform const float THRQTR_PI;
+extern uniform const float RADDEG;
+extern uniform const float PI_FLOAT;
+extern uniform const float PIBY2_FLOAT;
+
+inline float atan2_approximation1(const float y, const float x)
+{
+  const float coeff_1 = PI/4.f;
+  const float coeff_2 = 3.f*coeff_1;
+  const float abs_y = abs(y);
+
+  const float nom = x<0 ? (x+abs_y) : (x-abs_y);
+  const float den = x<0 ? (abs_y-x) : (x+abs_y);
+
+  const float r = nom / den;
+  const float angle = (x<0 ? coeff_2 : coeff_1) - coeff_1 * r;
+
+  return y<0 ? -angle : angle;
+}
+
+inline float hit_phi_odd(const float x, const float y) {
+  return atan2_approximation1(y, x);
+}
+
+inline float hit_phi_even(const float x, const float y)
+{
+  const float phi = atan2_approximation1(y, x);
+  const bool less_than_zero = phi < 0.f;
+  return phi + (less_than_zero ? 2 * PI : 0);
+}

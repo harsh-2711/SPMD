@@ -1,0 +1,15 @@
+#pragma once
+
+void apply_permutation(
+  uniform const unsigned int* uniform module_hitStarts,
+  uniform const unsigned int* uniform module_hitNums,
+  unsigned int8* permutation,
+  unsigned int32* prev_container,
+  unsigned int32* new_container);
+
+void apply_permutation(
+  uniform const unsigned int* uniform module_hitStarts,
+  uniform const unsigned int* uniform module_hitNums,
+  unsigned int8* permutation,
+  float* prev_container,
+  float* new_container);
